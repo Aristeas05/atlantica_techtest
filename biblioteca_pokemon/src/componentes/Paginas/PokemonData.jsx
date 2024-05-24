@@ -7,6 +7,12 @@ const PokemonData = (props) =>{
     const loged = localStorage.getItem('loged');
     const[pokeData, setpokeData] = useState('');
     const id = useParams().id;
+    const capturados = JSON.parse(localStorage.getItem('catchedStack')).atrapados;
+    let value = '';
+    const showtag = loged == 'true'? true : false;
+    if (showtag) {
+        value = capturados.find(v => v === (id-1))
+    }
 
     const cargarData = async () =>{
         let jsonData = await getPokeById(id);
@@ -29,15 +35,14 @@ const PokemonData = (props) =>{
     return(
         <> 
             {
-                loged == 'true'
+                showtag
                 ?
-                    props.state === 'Capturado'
+                    value != undefined
                     ?
-                    <p> Estado de captura: <span> Capturado </span></p>
+                        <p> Estado de captura: <span> Capturado </span></p>
                     :
-                    <button onClick={handleCatch}>Capturar pokemon</button>
-                :
-                ''
+                        <button onClick={handleCatch}>Capturar pokemon</button>
+                : ''
             }
             {
                 pokeData != ''
