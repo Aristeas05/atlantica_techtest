@@ -1,0 +1,42 @@
+.card{
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    transition: 0.5s;
+    padding: 15px 10px;
+    &:hover{
+        box-shadow: 0 12px 32px 2px rgba(0,0,0,.122), 0 4px 8px 0 rgba(0,0,0,.078);
+        transition: 0.5s;
+    }
+    img{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        height: 100px;
+        width: 100%;
+        
+    }
+    p{
+        color: black;
+    }
+}
+
+.headerBar{
+    padding: 14px 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    button{
+        height: 40px;
+        box-sizing: border-box;
+        padding: 5px 30px;
+        border: 0px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #f5a3a3;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            background-color: #ec8282;
+        }
+    }
+}
